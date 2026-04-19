@@ -1,0 +1,9 @@
+macbook-charge-limit
+macbook-charge-limit.service
+*.o
+*.d
+*.a
+*.so
+*.log
+build/
+dist/

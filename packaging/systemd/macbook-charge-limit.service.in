@@ -1,0 +1,12 @@
+[Unit]
+Description=Set Intel MacBook battery charge limit
+
+[Service]
+Type=oneshot
+Environment=LIMIT=80
+EnvironmentFile=-@SYSCONFDIR@/macbook-charge-limit.conf
+ExecStart=@PREFIX@/bin/macbook-charge-limit set ${LIMIT}
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
