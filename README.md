@@ -152,3 +152,22 @@ sudo rm -f /etc/macbook-charge-limit.conf
 
 This is a userspace workaround. Native desktop integration depends on a kernel
 driver exposing the standard power-supply threshold interface.
+
+## Upstream Progress
+
+This tool exists because Linux has no native way to set a MacBook's charge
+limit. That's being worked on upstream, and this section tracks it. Once the
+kernel and UPower changes below land in a released distro, this project
+becomes unnecessary for most users.
+
+Pending review:
+
+- [ ] [ACPI: sbs: add battery hook mechanism for SBS-registered batteries](https://lore.kernel.org/linux-hwmon/20260913231410.416922-1-jordan@brough.org/) (kernel, patch 1/2)
+- [ ] [hwmon: (applesmc) add charge_control_end_threshold support](https://lore.kernel.org/linux-hwmon/20260913231410.416922-1-jordan@brough.org/) (kernel, patch 2/2)
+- [ ] [upower!346: prefer live sysfs threshold values over hwdb CHARGE_LIMIT default](https://gitlab.freedesktop.org/upower/upower/-/merge_requests/346)
+
+The two kernel patches add real `charge_control_end_threshold` sysfs support
+to `applesmc`, backed by the actual Apple SMC `BCLM` key. The UPower change
+fixes a separate bug where UPower (and anything reading its D-Bus property,
+like KDE's battery applet) shows a static default instead of the real
+configured threshold.
