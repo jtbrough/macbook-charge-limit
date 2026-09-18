@@ -162,8 +162,7 @@ becomes unnecessary for most users.
 
 Pending review:
 
-- [ ] [ACPI: sbs: add battery hook mechanism for SBS-registered batteries](https://lore.kernel.org/linux-hwmon/20260913231410.416922-2-jordan@brough.org/) (kernel, patch 1/2)
-- [ ] [hwmon: (applesmc) add charge_control_end_threshold support](https://lore.kernel.org/linux-hwmon/20260913231410.416922-3-jordan@brough.org/) (kernel, patch 2/2)
+- [ ] [[PATCH v2 0/2] hwmon: (applesmc) add charge_control_end_threshold support](https://lore.kernel.org/linux-hwmon/20260918175052.85461-1-jordan@brough.org/)
 - [ ] [upower!346: prefer live sysfs threshold values over hwdb CHARGE_LIMIT default](https://gitlab.freedesktop.org/upower/upower/-/merge_requests/346)
 
 The two kernel patches add real `charge_control_end_threshold` sysfs support
